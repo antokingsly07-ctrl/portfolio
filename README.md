@@ -15,7 +15,8 @@ Static, dependency-free portfolio (no Node.js build required). Open `index.html`
 
 - `index.html` — all sections: Home, About, Skills, Projects, Achievements, Certifications, Experience, Education, Resume, Contact, Footer
 - `styles.css` — dark theme, responsive (320 / 375 / 425 / 768 / 1024 / 1440), `prefers-reduced-motion` respected
-- `script.js` — mobile nav, active-link highlight, scroll reveal, mailto contact fallback
-- `favicon.svg`, `profile.jpg` (you add), `resume.pdf` (you add)
+- `script.js` — mobile nav, active-link highlight, scroll reveal, animations, back-to-top
+- `resume.html` → `resume.pdf` — editable resume source and generated PDF
+- `profile.jpg`, `project-*.jpg` — profile photo and project thumbnails
 
 No fake data was added. Missing info is shown as clearly marked placeholders.
