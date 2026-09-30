@@ -6,7 +6,7 @@ Static, dependency-free portfolio (no Node.js build required). Open `index.html`
 
 1. **Profile photo:** done — `profile.jpg` is in place (converted from your upload).
 2. **Project images:** done — all 6 cards have thumbnails (`project-disaster.jpg`, `project-brandforge.jpg`, `project-fakenews.jpg`, `project-sentiment.jpg`, `project-carprice.jpg`, `project-sales.jpg`).
-2. **Resume:** add your file as `resume.pdf` in the site root. The "Download Resume" button already points to it.
+2. **Resume:** done — `resume.pdf` is generated from `resume.html` (edit the HTML and re-render to update).
 3. **LinkedIn:** wired to `https://www.linkedin.com/in/anto-kingsly-christofer-03304a32b` (hero, contact, footer).
 4. **Project URLs:** project cards link to `https://github.com/antokingsly07-ctrl` where a repo-specific URL was not provided. Replace with per-project repo URLs when ready.
 5. **Certificates:** 6 listed (Power BI + SQL via Simplilearn, Full Stack Developer via Tekksol Global, hardware troubleshooting via New Technology Institution, AI in Project Management via Alison, Drone Tech via Airobo Infinity). Add verification links later if available.
