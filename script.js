@@ -54,58 +54,6 @@
   document.querySelectorAll('.btn-disabled').forEach(function(b){
     b.addEventListener('click', function(e){ e.preventDefault(); });
   });
-
-  // Contact form -> delivered to antokingsly07@gmail.com via Web3Forms (no backend needed,
-  // works from file:// previews, localhost, and hosted sites).
-  // ONE-TIME SETUP (1 minute):
-  //   1. Go to https://web3forms.com and enter antokingsly07@gmail.com to get a free access key.
-  //   2. Paste the key below as WEB3FORMS_KEY. Done — messages arrive instantly.
-  var WEB3FORMS_KEY = 'PASTE-YOUR-WEB3FORMS-KEY-HERE';
-  var form = document.getElementById('contactForm');
-  if(form){
-    var status = document.getElementById('formStatus');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(form.elements._honey && form.elements._honey.value){ return; } // spam bot trap
-      var name = form.elements.name.value.trim();
-      var email = form.elements.email.value.trim();
-      var msg = form.elements.message.value.trim();
-      if(!name || !email || !msg){ return; }
-      var btn = form.querySelector('button[type="submit"]');
-      var original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      if(status){ status.className = 'form-status'; status.textContent = ''; }
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: 'New portfolio message from ' + name,
-          from_name: name,
-          name: name,
-          email: email,
-          message: msg,
-          botcheck: form.elements._honey ? form.elements._honey.value : ''
-        })
-      }).then(function(res){
-        return res.json();
-      }).then(function(data){
-        if(!data || !data.success){ throw new Error((data && data.message) || 'send failed'); }
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = original;
-        if(status){ status.className = 'form-status success'; status.textContent = 'Message sent! I will get back to you soon.'; }
-      }).catch(function(){
-        btn.disabled = false;
-        btn.textContent = original;
-        if(status){
-          status.className = 'form-status error';
-          status.innerHTML = 'Could not send automatically. Please email me directly at <a href="mailto:antokingsly07@gmail.com">antokingsly07@gmail.com</a>.';
-        }
-      });
-    });
-  }
 })();
 
 /* Scroll progress, nav state, back-to-top, staggered reveals, card spotlight */
